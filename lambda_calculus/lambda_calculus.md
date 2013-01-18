@@ -18,5 +18,6 @@ The third form is application of &lambda;-expression 1 to &lambda;-expression 2;
 (&lambda;x.B C) has the effect of replacing all occurences of x in B with C.
 
 Some Examples
-** &lambda;x.x **
+** &lambda;x.x ** 
+This is the identity operation; in Groovy, it would be `{ x -> x }`.
 [Markdown syntax](http://daringfireball.net/projects/markdown/dingus)
