@@ -17,7 +17,34 @@ parameter of a function in a modern computer language.
 The third form is application of &lambda;-expression 1 to &lambda;-expression 2;
 (&lambda;x.B C) has the effect of replacing all occurences of x in B with C.
 
-Some Examples
-** &lambda;x.x ** 
-This is the identity operation; in Groovy, it would be `{ x -> x }`.
+Examples
+--------
+### Example 1 -- Identity
+&lambda;x.x -- This is the identity operation; in Groovy, it would be `{ x -> x }`.
+
+### Example 2 -- Self-apply
+&lambda;s.(s s) -- Applies `s` to itself.  In Groovy `{ s -> s(s) }`
+
+### Example 3 -- Boolean true and false
+&lambda;first.&lambda;second.first --  This takes two arguments and returns the first.  ` {first, second -> first}`.  It is significant because Church used it as `true` in deriving boolean logic from the &lambda;-calculus.
+
+&lambda;first.&lambda;second.second -- Return the second argument.  This is `false` in boolean logic.
+
+### Example 4 -- if-then-else
+&lambda;iftrue.&lambda;iffalse.&lambda;test.((test iftrue) iffalse)  -- If you apply this to a &lambda;-expression 
+that evaluates to `true` or `false`, it becomes the standard if-then-else construct you find in 
+almost every programming language.  In this case, the test is the third argument so you can curry it with iftrue and
+iffalse expressions.  Thus 
+
+>((&lambda;iftrue.&lambda;iffalse.&lambda;test.((test iftrue) iffalse) x) y) =>
+(&lambda;iffalse.&lambda;test.((test x) iffalse) y) => 
+&lambda;test.((test x) y)
+
+The result is a function that you apply to a boolean condition.  
+
+> &lambda;test.((test x) y) true => x
+> &lambda;test.((test x) y) false => y
+
+This is usually abbreviated to _&lambda;test.&lambda;iftrue.&lambda;.iffalse.(test iftrue iffalse)_
+
 [Markdown syntax](http://daringfireball.net/projects/markdown/dingus)
