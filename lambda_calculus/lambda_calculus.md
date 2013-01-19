@@ -43,8 +43,27 @@ iffalse expressions.  Thus
 The result is a function that you apply to a boolean condition.  
 
 > &lambda;test.((test x) y) true => x
+
 > &lambda;test.((test x) y) false => y
 
-This is usually abbreviated to _&lambda;test.&lambda;iftrue.&lambda;.iffalse.(test iftrue iffalse)_
+Abbreviated Form
+================
+
+Because the lambda notation of all but the simplest expressions becomes 
+difficult to read because of all the parentheses, is often abbreviated 
+by combining the application of multiple arguments of an expression into a
+single set of parentheses.  Thus
+
+> &lambda;a.&lambda;b.&lambda;c.(((f a) b) c)
+
+becomes
+
+> &lambda;a.&lambda;b.&lambda;c.(f a b c)
+
+So the if-then-else example above would look like this.
+
+> &lambda;test.&lambda;iftrue.&lambda;.iffalse.(test iftrue iffalse)
+
+At this point it seems to start looking like LISP code.  Funny how that works out.
 
 [Markdown syntax](http://daringfireball.net/projects/markdown/dingus)
