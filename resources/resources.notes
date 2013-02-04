@@ -4,3 +4,14 @@
 ** Douglas Crockford
    This talk shows us how to apply Monads in Javascript.
    [[http://youtu.be/dkZFtimgAcM]]
+   [[https://github.com/douglascrockford/monad]]
+** More on Javascript monads
+[[http://igstan.ro/posts/2011-05-02-understanding-monads-with-javascript.html]]
+[[http://stackoverflow.com/questions/8656172/monads-in-javascript]]
+[[http://blog.jcoglan.com/2011/03/06/monad-syntax-for-javascript/]]
+[[http://channel9.msdn.com/Events/aspConf/aspConf/Understanding-Monads-with-JavaScript]]
+[[https://github.com/five-eleven/monadic]]
+[[https://gist.github.com/1618403]]     
+                                        
+[[http://channel9.msdn.com/Shows/Going+Deep/Hewitt-Meijer-and-Szyperski-The-Actor-Model-everything-you-wanted-to-know-but-were-afraid-to-ask]]
+[[http://www.youtube.com/watch?v=w9hHHvhZ_HY]]
