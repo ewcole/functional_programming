@@ -1,0 +1,23 @@
+* Overview
+What is functional programming?  Why does it matter?  
+
+* Lambda Calculus
+  The Lambda Calculus is 
+* Functional Programming Languages
+- Haskell
+- Scala
+- Lisp
+- Scheme  
+* Functions as First-Class Objects
+  Callbacks, Hooks, and Ajax
+* Closures
+* Combinators
+* Recursion
+* Javascript
+* Groovy
+* Monads
+  Monads are a hot topic in today's programming scene.  They are an 
+  escapee from Category Theory, which is a kind of meta-mathemeatics.
+** Real-world programming requires side-effects.
+*** IO monads
+** Promises
