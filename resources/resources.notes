@@ -1,14 +1,13 @@
 * MONADS
 ** An interesting blog entry: 
-   [[http://cdsmith.wordpress.com/2012/04/18/why-do-monads-matter/]]
+   [[http://cdsmith.wordpress.com/2012/04/18/why-do-monads-matter/][Why do Monads Matter?]]
 ** Douglas Crockford
    This talk shows us how to apply Monads in Javascript.
-   [[http://youtu.be/dkZFtimgAcM]]
-   [[https://github.com/douglascrockford/monad]]
+   [[http://youtu.be/dkZFtimgAcM][Douglas Crockford's YouTube talk on Monads in Javascript]]
+   [[https://github.com/douglascrockford/monad][The source code in GitHub]]
 ** More on Javascript monads
-- [[http://igstan.ro/posts/2011-05-02-understanding-monads-with-javascript.html]]
+- [[http://igstan.ro/posts/2011-05-02-understanding-monads-with-javascript.html][Understanding Monads With JavaScript]]
 - [[http://stackoverflow.com/questions/8656172/monads-in-javascript]]
-- [[http://blog.jcoglan.com/2011/03/06/monad-syntax-for-javascript/]]
 - [[http://channel9.msdn.com/Events/aspConf/aspConf/Understanding-Monads-with-JavaScript]]
 - [[https://github.com/five-eleven/monadic]]
 - [[https://gist.github.com/1618403]]     
@@ -18,6 +17,7 @@
 - [[http://www.i-programmer.info/programming/jquery/4837-jquery-promises-deferred-a-webworkers.html]]
 ** Promises
 -  [[http://net.tutsplus.com/tutorials/javascript-ajax/wrangle-async-tasks-with-jquery-promises/][Wrangle Async Tasks With JQuery Promises]]
+- [[https://gist.github.com/briancavalier/3296186][A proof that Promises/A is a Monad]] (This looks very interesting.)
 \lambda
 \Lambda 
                 
