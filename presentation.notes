@@ -7,9 +7,13 @@ What is functional programming?  Why does it matter?
 - Haskell
 - Scala
 - Lisp
-- Scheme  
+- Scheme
+- Clojure  
+- Groovy
 * Functions as First-Class Objects
   Callbacks, Hooks, and Ajax
+** Callbacks
+** State tables
 * Closures
 * Combinators
 * Recursion
@@ -18,6 +22,10 @@ What is functional programming?  Why does it matter?
 * Monads
   Monads are a hot topic in today's programming scene.  They are an 
   escapee from Category Theory, which is a kind of meta-mathemeatics.
-** Real-world programming requires side-effects.
-*** IO monads
+** IO monad
+Real-world programming requires side-effects, which is a big problem for 
+strictly functional languages, like Haskell, that enforce immutability.  
+They found a loophole by introducing the IO monad, which can be turned into 
+a list of instructions for creating the output.
+** Maybe monad
 ** Promises
