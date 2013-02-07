@@ -1,10 +1,13 @@
 * MONADS
-** An interesting blog entry: 
-   [[http://cdsmith.wordpress.com/2012/04/18/why-do-monads-matter/][Why do Monads Matter?]]
+** What are Monads?
+- [[http://stackoverflow.com/questions/44965/what-is-a-monad][What is a monad? (from StackOverflow)]]
+- [[http://blog.sigfpe.com/2006/08/you-could-have-invented-monads-and.html][You Could Have Invented Monads! (And Maybe You Already Have.)]]   
+  This gives us a good introduction to the subject.
+- [[http://cdsmith.wordpress.com/2012/04/18/why-do-monads-matter/][Why do Monads Matter?]]
 ** Douglas Crockford
    This talk shows us how to apply Monads in Javascript.
-   [[http://youtu.be/dkZFtimgAcM][Douglas Crockford's YouTube talk on Monads in Javascript]]
-   [[https://github.com/douglascrockford/monad][The source code in GitHub]]
+- [[http://youtu.be/dkZFtimgAcM][Douglas Crockford's YouTube talk on Monads in Javascript]]
+- [[https://github.com/douglascrockford/monad][The source code in GitHub]]
 ** More on Javascript monads
 - [[http://igstan.ro/posts/2011-05-02-understanding-monads-with-javascript.html][Understanding Monads With JavaScript]]
 - [[http://stackoverflow.com/questions/8656172/monads-in-javascript]]
@@ -20,4 +23,9 @@
 - [[https://gist.github.com/briancavalier/3296186][A proof that Promises/A is a Monad]] (This looks very interesting.)
 \lambda
 \Lambda 
-                
+           
+#+BEGIN_SRC emacs-lisp
+  (defun org-xor (a b)
+     "Exclusive or."
+     (if a (not b) b))
+#+END_SRC
