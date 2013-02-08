@@ -1,3 +1,5 @@
+* Support for functional programming in different computer languages
+- [[http://en.wikipedia.org/wiki/Function_object][Wikipedia article on function objects]] Some languages allow you to pass a function as a parameter, but do not provide closures.
 * MONADS
 ** What are Monads?
 - [[http://stackoverflow.com/questions/44965/what-is-a-monad][What is a monad? (from StackOverflow)]]
