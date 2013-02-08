@@ -4,12 +4,39 @@ What is functional programming?  Why does it matter?
 * Lambda Calculus
   The Lambda Calculus is 
 * Functional Programming Languages
-- Haskell
-- Scala
-- Lisp
-- Scheme
-- Clojure  
-- Groovy
+** Groovy
+#+BEGIN_SRC groovy -n
+def x = 1
+def plus1 = { a ->  a + 1 }
+plus1(x)
+#+END_SRC
+** Haskell
+** Scala
+** Lisp
+You define an anonymous function with the lambda keyword. (This is using emacs lisp).
+#+BEGIN_SRC emacs-lisp -n
+;; setq defines a local variable and assigns it a value.
+(setq x 1)
+
+;; x is now a variable containing the value 1
+(setq plus1 (lambda (a) "Add 1 to a" (+ a 1)))
+
+;; plus1 is now a variable containing an anonymous function
+;;     that adds 1 to its single argument
+;;
+
+;; Invoke plus1 with argment 1
+(funcall plus1 1)
+;; The result is 2.
+#+END_SRC
+
+#+RESULTS:
+: 2
+
+See the emacs lisp documntation on [[http://www.gnu.org/software/emacs/manual/html_node/elisp/Lambda-Expressions.html#Lambda-Expressions][lambdas]] and [[http://www.gnu.org/software/emacs/manual/html_node/elisp/Lexical-Binding.html#Lexical-Binding][closures]].
+*** emacs lisp
+*** Scheme
+*** Clojure  
 * Functions as First-Class Objects
   Callbacks, Hooks, and Ajax
 ** Callbacks
