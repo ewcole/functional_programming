@@ -1,3 +1,5 @@
+* Support for functional programming in different computer languages
+- [[http://en.wikipedia.org/wiki/Function_object][Wikipedia article on function objects]] Some languages allow you to pass a function as a parameter, but do not provide closures.
 * MONADS
 ** What are Monads?
 - [[http://stackoverflow.com/questions/44965/what-is-a-monad][What is a monad? (from StackOverflow)]]
@@ -16,7 +18,8 @@
 - [[https://gist.github.com/1618403]]     
                                          
 - [[http://channel9.msdn.com/Shows/Going+Deep/Hewitt-Meijer-and-Szyperski-The-Actor-Model-everything-you-wanted-to-know-but-were-afraid-to-ask]]
-- [[http://www.youtube.com/watch?v=w9hHHvhZ_HY]]
+- [[http://www.youtube.com/watch?v=w9hHHvhZ_HY][Secure Distributed Programming with Object-capabilities in JavaScript]]
+*** jQuery
 - [[http://www.i-programmer.info/programming/jquery/4837-jquery-promises-deferred-a-webworkers.html]]
 ** Promises
 -  [[http://net.tutsplus.com/tutorials/javascript-ajax/wrangle-async-tasks-with-jquery-promises/][Wrangle Async Tasks With JQuery Promises]]
