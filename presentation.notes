@@ -10,6 +10,9 @@ What is functional programming?  Why does it matter?
 - Scheme
 - Clojure  
 - Groovy
+#BEGIN_SOURCE groovy
+{ x -> x + 1 }
+#END_SOURCE
 * Functions as First-Class Objects
   Callbacks, Hooks, and Ajax
 ** Callbacks
