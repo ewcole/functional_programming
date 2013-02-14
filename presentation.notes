@@ -1,3 +1,5 @@
+#+TITLE: Functional Programming
+
 * Overview
 What is functional programming?  Why does it matter?  
 
@@ -61,3 +63,6 @@ They found a loophole by introducing the IO monad, which can be turned into
 a list of instructions for creating the output.
 ** Maybe monad
 ** Promises
+* Notes
+- [[http://marakana.com/s/post/1118/jquery_plugins][Develop your own jQuery plugin]]
+- [[http://marakana.com/s/post/1127/jquery_web_page_presentation][Transform your web page into a presentation with jQuery]]
