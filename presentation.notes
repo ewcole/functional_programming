@@ -6,7 +6,10 @@ What is functional programming?  Why does it matter?
 * Lambda Calculus
   The Lambda Calculus is 
 * Functional Programming Languages
-Functional programming languages are languages in which you can 
+Functional programming languages are languages in which you 
+can use functions as first-class objects.  That means that you can assign a 
+function to a variable, pass it as a parameter, and perform certain operations
+on it.  
 ** Lisp
 You define an anonymous function with the lambda keyword. (This is using emacs lisp).
 #+BEGIN_SRC emacs-lisp -n
