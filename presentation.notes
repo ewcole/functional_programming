@@ -1,4 +1,4 @@
-#+TITLE: Functional Programming
+#+TITLE: Functional Programming and the Lambda Calculus
 
 * Overview
 What is functional programming?  Why does it matter?  
@@ -9,7 +9,25 @@ What is functional programming?  Why does it matter?
 Functional programming languages are languages in which you 
 can use functions as first-class objects.  That means that you can assign a 
 function to a variable, pass it as a parameter, and perform certain operations
-on it.  
+on it. 
+** JavaScript
+JavaScript is the first mainstream language with closures.
+#+BEGIN_SRC javascript -n
+// Define the variables
+var x = 1, plus1;
+
+plus1 = function (a) {
+    return a + 1;
+}
+
+// plus1 is now a variable containing an anonymous function
+//     that adds 1 to its single argument
+//
+
+// Invoke plus1 with argment 1
+plus1(1);
+#+END_SRC
+
 ** Lisp
 You define an anonymous function with the lambda keyword. (This is using emacs lisp).
 #+BEGIN_SRC emacs-lisp -n
@@ -25,16 +43,26 @@ You define an anonymous function with the lambda keyword. (This is using emacs l
 
 ;; Invoke plus1 with argment 1
 (funcall plus1 1)
+
+;; In Scheme, you don't need to use funcall.  You can just say
+;;   (plus1 1)
 ;; The result is 2.
 #+END_SRC
 
 #+RESULTS:
 : 2
 
+Note that you don't have to use the funcall function in Scheme; you would 
+just invoke it like any other function. 
+
+: (plus1 1)
+
 See the emacs lisp documntation on [[http://www.gnu.org/software/emacs/manual/html_node/elisp/Lambda-Expressions.html#Lambda-Expressions][lambdas]] and [[http://www.gnu.org/software/emacs/manual/html_node/elisp/Lexical-Binding.html#Lexical-Binding][closures]].
-*** emacs lisp
-*** Scheme
-*** Clojure  
+There are Many flavors of Lisp, but I think the most
+important ones are listed below.
+- Emacs Lisp
+- Scheme
+- Clojure  
 ** Groovy
 #+BEGIN_SRC groovy -n
 def x = 1
@@ -42,7 +70,9 @@ def plus1 = { a ->  a + 1 }
 plus1(x)
 #+END_SRC
 ** Haskell
+Haskell is a strictly functional programming language.  This introduces disadvantages as well as advantages, but it was originally an academic language
 ** Scala
+Scala is another language designed for the JVM, which introduces some functional concepts.
 #+BEGIN_SRC scala
 var plus1 = (x: Int) => x + 1
 plus1(1)
@@ -51,6 +81,8 @@ plus1(1)
   Callbacks, Hooks, and Ajax
 ** Callbacks
 ** State tables
+** Hooks
+** Asynchronous operations
 * Closures
 * Combinators
 * Recursion
