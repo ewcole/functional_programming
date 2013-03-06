@@ -9,7 +9,8 @@ What is functional programming?  Why does it matter?
 Functional programming languages are languages in which you 
 can use functions as first-class objects.  That means that you can assign a 
 function to a variable, pass it as a parameter, and perform certain operations
-on it. 
+on it.  Some languages, like Haskell are strict in enforcing the restrictions
+of pure functional programming, and some are much less so.
 ** JavaScript
 JavaScript is the first mainstream language with closures.
 #+BEGIN_SRC javascript -n
@@ -29,7 +30,8 @@ plus1(1);
 #+END_SRC
 
 ** Lisp
-You define an anonymous function with the lambda keyword. (This is using emacs lisp).
+You define an anonymous function with the lambda keyword. 
+(This is using Emacs Lisp).
 #+BEGIN_SRC emacs-lisp -n
 ;; setq defines a local variable and assigns it a value.
 (setq x 1)
@@ -44,25 +46,56 @@ You define an anonymous function with the lambda keyword. (This is using emacs l
 ;; Invoke plus1 with argment 1
 (funcall plus1 1)
 
-;; In Scheme, you don't need to use funcall.  You can just say
-;;   (plus1 1)
 ;; The result is 2.
+
+;; Note that in Emacs Lisp you cannot just say (plus1 1).
 #+END_SRC
 
 #+RESULTS:
 : 2
 
-Note that you don't have to use the funcall function in Scheme; you would 
-just invoke it like any other function. 
-(See [[ftp://ftp.cs.utexas.edu/pub/garbage/cs345/schintro-v14/schintro_122.html][An Introduction to Scheme and its Implementation]])
-
-: (plus1 1)
-
-See the emacs lisp documntation on [[http://www.gnu.org/software/emacs/manual/html_node/elisp/Lambda-Expressions.html#Lambda-Expressions][lambdas]] and [[http://www.gnu.org/software/emacs/manual/html_node/elisp/Lexical-Binding.html#Lexical-Binding][closures]].
+See the emacs lisp documentation on [[http://www.gnu.org/software/emacs/manual/html_node/elisp/Lambda-Expressions.html#Lambda-Expressions][lambdas]] and [[http://www.gnu.org/software/emacs/manual/html_node/elisp/Lexical-Binding.html#Lexical-Binding][closures]].
 There are Many flavors of Lisp, but I think the most
 important ones are listed below.
 - Emacs Lisp
 - Scheme
+You don't have to use the funcall function in Scheme; you would 
+just invoke it like any other function. 
+(See [[ftp://ftp.cs.utexas.edu/pub/garbage/cs345/schintro-v14/schintro_122.html][An Introduction to Scheme and its Implementation]])
+
+#+BEGIN_SRC scheme -n
+(define x 1)
+(print "x is now a variable containing the value 1")
+(print x)
+;; Define, but do not assign, plus1
+(define plus1)
+(set! plus1 (lambda (a) "Add 1 to a" (+ a 1)))
+(print "plus1 is now a variable containing an anonymous function")
+(print "      that adds 1 to its single argument")
+(print "")
+(print "Invoke plus1 with argument x")
+(print (plus1 x))(define x 1)
+(print "x is now a variable containing the value 1")
+(print x)
+;; Define, but do not assign, plus1
+(define plus1)
+(set! plus1 (lambda (a) "Add 1 to a" (+ a 1)))
+(print "plus1 is now a variable containing an anonymous function")
+(print "      that adds 1 to its single argument")
+(print "")
+(print "Invoke plus1 with argument x")
+(print (plus1 x))
+#+END_SRC
+This is evaluated by the Scheme interpreter at [[http://repl.it][repl.it]]
+#+BEGIN_EXAMPLE
+x is now a variable containing the value 1
+1
+plus1 is now a variable containing an anonymous function
+      that adds 1 to its single argument
+
+Invoke plus1 with argument x
+2
+#+END_EXAMPLE
 - Clojure  
 ** Groovy
 #+BEGIN_SRC groovy -n
@@ -87,6 +120,7 @@ plus1(1)
 * Closures
 * Combinators
 * Recursion
+* Lists
 * Javascript
 * Groovy
 * Monads
