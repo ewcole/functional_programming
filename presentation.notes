@@ -97,11 +97,12 @@ Invoke plus1 with argument x
 2
 #+END_EXAMPLE
 - Clojure  
+#+BEGIN_SRC clojure
 (def x 1)
 (def plus1)
 (def plus1 (fn [a] (+ a 1)))
 (plus1 1)
-
+#+END_SRC
 http://tryclj.com/
 ** Groovy
 #+BEGIN_SRC groovy -n
