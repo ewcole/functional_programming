@@ -1,0 +1,492 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Functional Programming and the Lambda Calculus</title>
+<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
+<meta name="title" content="Functional Programming and the Lambda Calculus"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2013-03-08 16:56:18 Eastern Standard Time"/>
+<meta name="author" content=""/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
+  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
+  .center {margin-left:auto; margin-right:auto; text-align:center;}
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top;  }
+  th.right  { text-align:center;  }
+  th.left   { text-align:center;   }
+  th.center { text-align:center; }
+  td.right  { text-align:right;  }
+  td.left   { text-align:left;   }
+  td.center { text-align:center; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  div.inlinetask {
+    padding:10px;
+    border:2px solid gray;
+    margin:10px;
+    background: #ffffcc;
+  }
+  textarea { overflow-x: auto; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+
+</head>
+<body>
+
+<div id="preamble">
+
+</div>
+
+<div id="content">
+<h1 class="title">Functional Programming and the Lambda Calculus</h1>
+
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1 Overview</a></li>
+<li><a href="#sec-2">2 Lambda Calculus</a></li>
+<li><a href="#sec-3">3 Functional Programming Languages</a>
+<ul>
+<li><a href="#sec-3-1">3.1 JavaScript</a></li>
+<li><a href="#sec-3-2">3.2 Lisp</a></li>
+<li><a href="#sec-3-3">3.3 Groovy</a></li>
+<li><a href="#sec-3-4">3.4 Haskell</a></li>
+<li><a href="#sec-3-5">3.5 Scala</a></li>
+</ul>
+</li>
+<li><a href="#sec-4">4 Functions as First-Class Objects</a>
+<ul>
+<li><a href="#sec-4-1">4.1 Callbacks</a></li>
+<li><a href="#sec-4-2">4.2 State tables</a></li>
+<li><a href="#sec-4-3">4.3 Hooks</a></li>
+<li><a href="#sec-4-4">4.4 Asynchronous operations</a></li>
+</ul>
+</li>
+<li><a href="#sec-5">5 Closures</a></li>
+<li><a href="#sec-6">6 Combinators</a></li>
+<li><a href="#sec-7">7 Recursion</a></li>
+<li><a href="#sec-8">8 Lists</a></li>
+<li><a href="#sec-9">9 Javascript</a></li>
+<li><a href="#sec-10">10 Groovy</a></li>
+<li><a href="#sec-11">11 Monads</a>
+<ul>
+<li><a href="#sec-11-1">11.1 IO monad</a></li>
+<li><a href="#sec-11-2">11.2 Maybe monad</a></li>
+<li><a href="#sec-11-3">11.3 Promises</a></li>
+</ul>
+</li>
+<li><a href="#sec-12">12 Notes</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Overview</h2>
+<div class="outline-text-2" id="text-1">
+
+<p>What is functional programming?  Why does it matter?  
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Lambda Calculus</h2>
+<div class="outline-text-2" id="text-2">
+
+<p>  The Lambda Calculus is 
+</p></div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Functional Programming Languages</h2>
+<div class="outline-text-2" id="text-3">
+
+<p>Functional programming languages are languages in which you 
+can use functions as first-class objects.  That means that you can assign a 
+function to a variable, pass it as a parameter, and perform certain operations
+on it.  Some languages, like Haskell are strict in enforcing the restrictions
+of pure functional programming, and some are much less so.
+</p>
+</div>
+
+<div id="outline-container-3-1" class="outline-3">
+<h3 id="sec-3-1"><span class="section-number-3">3.1</span> JavaScript</h3>
+<div class="outline-text-3" id="text-3-1">
+
+<p>JavaScript is the first mainstream language with closures.
+</p>
+
+
+<pre class="example"><span class="linenr"> 1:  </span>// Define the variables
+<span class="linenr"> 2:  </span>var x = 1, plus1;
+<span class="linenr"> 3:  </span>
+<span class="linenr"> 4:  </span>plus1 = function (a) {
+<span class="linenr"> 5:  </span>    return a + 1;
+<span class="linenr"> 6:  </span>}
+<span class="linenr"> 7:  </span>
+<span class="linenr"> 8:  </span>// plus1 is now a variable containing an anonymous function
+<span class="linenr"> 9:  </span>//     that adds 1 to its single argument
+<span class="linenr">10:  </span>//
+<span class="linenr">11:  </span>
+<span class="linenr">12:  </span>// Invoke plus1 with argment 1
+<span class="linenr">13:  </span>plus1(1);
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-3-2" class="outline-3">
+<h3 id="sec-3-2"><span class="section-number-3">3.2</span> Lisp</h3>
+<div class="outline-text-3" id="text-3-2">
+
+<p>You define an anonymous function with the lambda keyword. 
+(This is using Emacs Lisp).
+</p>
+
+
+<pre class="example"><span class="linenr"> 1:  </span>;; setq defines a local variable and assigns it a value.
+<span class="linenr"> 2:  </span>(setq x 1)
+<span class="linenr"> 3:  </span>
+<span class="linenr"> 4:  </span>;; x is now a variable containing the value 1
+<span class="linenr"> 5:  </span>(setq plus1 (lambda (a) "Add 1 to a" (+ a 1)))
+<span class="linenr"> 6:  </span>
+<span class="linenr"> 7:  </span>;; plus1 is now a variable containing an anonymous function
+<span class="linenr"> 8:  </span>;;     that adds 1 to its single argument
+<span class="linenr"> 9:  </span>;;
+<span class="linenr">10:  </span>
+<span class="linenr">11:  </span>;; Invoke plus1 with argment 1
+<span class="linenr">12:  </span>(funcall plus1 1)
+<span class="linenr">13:  </span>
+<span class="linenr">14:  </span>;; The result is 2.
+<span class="linenr">15:  </span>
+<span class="linenr">16:  </span>;; Note that in Emacs Lisp you cannot just say (plus1 1).
+</pre>
+
+
+<p>
+See the emacs lisp documentation on <a href="http://www.gnu.org/software/emacs/manual/html_node/elisp/Lambda-Expressions.html#Lambda-Expressions">lambdas</a> and <a href="http://www.gnu.org/software/emacs/manual/html_node/elisp/Lexical-Binding.html#Lexical-Binding">closures</a>.
+There are Many flavors of Lisp, but I think the most
+important ones are listed below.
+</p><ul>
+<li>Emacs Lisp
+</li>
+<li>Scheme
+</li>
+</ul>
+
+<p>You don't have to use the funcall function in Scheme; you would 
+just invoke it like any other function. 
+(See <a href="ftp://ftp.cs.utexas.edu/pub/garbage/cs345/schintro-v14/schintro_122.html">An Introduction to Scheme and its Implementation</a>)
+</p>
+
+
+
+<pre class="example"><span class="linenr"> 1:  </span>(define x 1)
+<span class="linenr"> 2:  </span>(print "x is now a variable containing the value 1")
+<span class="linenr"> 3:  </span>(print x)
+<span class="linenr"> 4:  </span>;; Define, but do not assign, plus1
+<span class="linenr"> 5:  </span>(define plus1)
+<span class="linenr"> 6:  </span>(set! plus1 (lambda (a) "Add 1 to a" (+ a 1)))
+<span class="linenr"> 7:  </span>(print "plus1 is now a variable containing an anonymous function")
+<span class="linenr"> 8:  </span>(print "      that adds 1 to its single argument")
+<span class="linenr"> 9:  </span>(print "")
+<span class="linenr">10:  </span>(print "Invoke plus1 with argument x")
+<span class="linenr">11:  </span>(print (plus1 x))(define x 1)
+<span class="linenr">12:  </span>(print "x is now a variable containing the value 1")
+<span class="linenr">13:  </span>(print x)
+<span class="linenr">14:  </span>;; Define, but do not assign, plus1
+<span class="linenr">15:  </span>(define plus1)
+<span class="linenr">16:  </span>(set! plus1 (lambda (a) "Add 1 to a" (+ a 1)))
+<span class="linenr">17:  </span>(print "plus1 is now a variable containing an anonymous function")
+<span class="linenr">18:  </span>(print "      that adds 1 to its single argument")
+<span class="linenr">19:  </span>(print "")
+<span class="linenr">20:  </span>(print "Invoke plus1 with argument x")
+<span class="linenr">21:  </span>(print (plus1 x))
+</pre>
+
+<p>
+This is evaluated by the Scheme interpreter at <a href="http://repl.it">repl.it</a>
+</p>
+
+
+<pre class="example">x is now a variable containing the value 1
+1
+plus1 is now a variable containing an anonymous function
+      that adds 1 to its single argument
+
+Invoke plus1 with argument x
+2
+</pre>
+
+<ul>
+<li>Clojure  
+</li>
+</ul>
+
+
+
+
+<pre class="example">(def x 1)
+(def plus1)
+(def plus1 (fn [a] (+ a 1)))
+(plus1 1)
+</pre>
+
+<p>
+<a href="http://tryclj.com/">http://tryclj.com/</a>
+</p></div>
+
+</div>
+
+<div id="outline-container-3-3" class="outline-3">
+<h3 id="sec-3-3"><span class="section-number-3">3.3</span> Groovy</h3>
+<div class="outline-text-3" id="text-3-3">
+
+
+
+
+<pre class="example"><span class="linenr">1:  </span>def x = 1
+<span class="linenr">2:  </span>def plus1 = { a -&gt;  a + 1 }
+<span class="linenr">3:  </span>plus1(x)
+</pre>
+
+</div>
+
+</div>
+
+<div id="outline-container-3-4" class="outline-3">
+<h3 id="sec-3-4"><span class="section-number-3">3.4</span> Haskell</h3>
+<div class="outline-text-3" id="text-3-4">
+
+<p>Haskell is a strictly functional programming language.  This introduces disadvantages as well as advantages, but it was originally an academic language
+</p></div>
+
+</div>
+
+<div id="outline-container-3-5" class="outline-3">
+<h3 id="sec-3-5"><span class="section-number-3">3.5</span> Scala</h3>
+<div class="outline-text-3" id="text-3-5">
+
+<p>Scala is another language designed for the JVM, which introduces some functional concepts.
+</p>
+
+
+<pre class="example">var plus1 = (x: Int) =&gt; x + 1
+plus1(1)
+</pre>
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> Functions as First-Class Objects</h2>
+<div class="outline-text-2" id="text-4">
+
+<p>  Callbacks, Hooks, and Ajax
+</p>
+</div>
+
+<div id="outline-container-4-1" class="outline-3">
+<h3 id="sec-4-1"><span class="section-number-3">4.1</span> Callbacks</h3>
+<div class="outline-text-3" id="text-4-1">
+
+</div>
+
+</div>
+
+<div id="outline-container-4-2" class="outline-3">
+<h3 id="sec-4-2"><span class="section-number-3">4.2</span> State tables</h3>
+<div class="outline-text-3" id="text-4-2">
+
+</div>
+
+</div>
+
+<div id="outline-container-4-3" class="outline-3">
+<h3 id="sec-4-3"><span class="section-number-3">4.3</span> Hooks</h3>
+<div class="outline-text-3" id="text-4-3">
+
+</div>
+
+</div>
+
+<div id="outline-container-4-4" class="outline-3">
+<h3 id="sec-4-4"><span class="section-number-3">4.4</span> Asynchronous operations</h3>
+<div class="outline-text-3" id="text-4-4">
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> Closures</h2>
+<div class="outline-text-2" id="text-5">
+
+</div>
+
+</div>
+
+<div id="outline-container-6" class="outline-2">
+<h2 id="sec-6"><span class="section-number-2">6</span> Combinators</h2>
+<div class="outline-text-2" id="text-6">
+
+</div>
+
+</div>
+
+<div id="outline-container-7" class="outline-2">
+<h2 id="sec-7"><span class="section-number-2">7</span> Recursion</h2>
+<div class="outline-text-2" id="text-7">
+
+</div>
+
+</div>
+
+<div id="outline-container-8" class="outline-2">
+<h2 id="sec-8"><span class="section-number-2">8</span> Lists</h2>
+<div class="outline-text-2" id="text-8">
+
+</div>
+
+</div>
+
+<div id="outline-container-9" class="outline-2">
+<h2 id="sec-9"><span class="section-number-2">9</span> Javascript</h2>
+<div class="outline-text-2" id="text-9">
+
+</div>
+
+</div>
+
+<div id="outline-container-10" class="outline-2">
+<h2 id="sec-10"><span class="section-number-2">10</span> Groovy</h2>
+<div class="outline-text-2" id="text-10">
+
+</div>
+
+</div>
+
+<div id="outline-container-11" class="outline-2">
+<h2 id="sec-11"><span class="section-number-2">11</span> Monads</h2>
+<div class="outline-text-2" id="text-11">
+
+<p>  Monads are a hot topic in today's programming scene.  They are an 
+  escapee from Category Theory, which is a kind of meta-mathemeatics.
+</p>
+</div>
+
+<div id="outline-container-11-1" class="outline-3">
+<h3 id="sec-11-1"><span class="section-number-3">11.1</span> IO monad</h3>
+<div class="outline-text-3" id="text-11-1">
+
+<p>Real-world programming requires side-effects, which is a big problem for 
+strictly functional languages, like Haskell, that enforce immutability.  
+They found a loophole by introducing the IO monad, which can be turned into 
+a list of instructions for creating the output.
+</p></div>
+
+</div>
+
+<div id="outline-container-11-2" class="outline-3">
+<h3 id="sec-11-2"><span class="section-number-3">11.2</span> Maybe monad</h3>
+<div class="outline-text-3" id="text-11-2">
+
+</div>
+
+</div>
+
+<div id="outline-container-11-3" class="outline-3">
+<h3 id="sec-11-3"><span class="section-number-3">11.3</span> Promises</h3>
+<div class="outline-text-3" id="text-11-3">
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-12" class="outline-2">
+<h2 id="sec-12"><span class="section-number-2">12</span> Notes</h2>
+<div class="outline-text-2" id="text-12">
+
+<ul>
+<li><a href="http://marakana.com/s/post/1118/jquery_plugins">Develop your own jQuery plugin</a>
+</li>
+<li><a href="http://marakana.com/s/post/1127/jquery_web_page_presentation">Transform your web page into a presentation with jQuery</a>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+
+<div id="postamble">
+<p class="date">Date: 2013-03-08 16:56:18 Eastern Standard Time</p>
+<p class="author">Author: </p>
+<p class="creator">Org version 7.8.11 with Emacs version 24</p>
+<a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
+
+</div>
+</body>
+</html>
