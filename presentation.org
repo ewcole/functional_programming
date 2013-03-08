@@ -11,27 +11,15 @@ can use functions as first-class objects.  That means that you can assign a
 function to a variable, pass it as a parameter, and perform certain operations
 on it.  Some languages, like Haskell are strict in enforcing the restrictions
 of pure functional programming, and some are much less so.
-** JavaScript
-JavaScript is the first mainstream language with closures.
-#+BEGIN_SRC javascript -n
-// Define the variables
-var x = 1, plus1;
-
-plus1 = function (a) {
-    return a + 1;
-}
-
-// plus1 is now a variable containing an anonymous function
-//     that adds 1 to its single argument
-//
-
-// Invoke plus1 with argment 1
-plus1(1);
-#+END_SRC
 
 ** Lisp
-You define an anonymous function with the lambda keyword. 
-(This is using Emacs Lisp).
+Lisp is an ancient and ever new language that pioneered many of the things
+we take for granted in modern programming languages.  It grew out of the 
+Lambda Calculus, so it has had functional programming features from the 
+beginning.
+
+*** Emacs Lisp
+In Emacs and Common Lisp, you define an anonymous function with the lambda keyword. 
 #+BEGIN_SRC emacs-lisp -n
 ;; setq defines a local variable and assigns it a value.
 (setq x 1)
@@ -57,8 +45,7 @@ You define an anonymous function with the lambda keyword.
 See the emacs lisp documentation on [[http://www.gnu.org/software/emacs/manual/html_node/elisp/Lambda-Expressions.html#Lambda-Expressions][lambdas]] and [[http://www.gnu.org/software/emacs/manual/html_node/elisp/Lexical-Binding.html#Lexical-Binding][closures]].
 There are Many flavors of Lisp, but I think the most
 important ones are listed below.
-- Emacs Lisp
-- Scheme
+*** Scheme
 You don't have to use the funcall function in Scheme; you would 
 just invoke it like any other function. 
 (See [[ftp://ftp.cs.utexas.edu/pub/garbage/cs345/schintro-v14/schintro_122.html][An Introduction to Scheme and its Implementation]])
@@ -96,7 +83,9 @@ plus1 is now a variable containing an anonymous function
 Invoke plus1 with argument x
 2
 #+END_EXAMPLE
-- Clojure  
+*** Clojure
+Clojure is a Lisp implementation for the Java Virtual Machine, but it has a 
+focus on concurrency.
 #+BEGIN_SRC clojure
 (def x 1)
 (def plus1)
@@ -104,6 +93,24 @@ Invoke plus1 with argument x
 (plus1 1)
 #+END_SRC
 http://tryclj.com/
+** JavaScript
+JavaScript is the first mainstream language with closures.  It is also a 
+language that we can't escape working with.  
+#+BEGIN_SRC javascript -n
+// Define the variables
+var x = 1, plus1;
+
+plus1 = function (a) {
+    return a + 1;
+}
+
+// plus1 is now a variable containing an anonymous function
+//     that adds 1 to its single argument
+//
+
+// Invoke plus1 with argment 1
+plus1(1);
+#+END_SRC
 ** Groovy
 #+BEGIN_SRC groovy -n
 def x = 1

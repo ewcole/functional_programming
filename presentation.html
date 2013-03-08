@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
 <meta name="title" content="Functional Programming and the Lambda Calculus"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2013-03-08 16:56:18 Eastern Standard Time"/>
+<meta name="generated" content="2013-03-08 17:04:34 Eastern Standard Time"/>
 <meta name="author" content=""/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -102,8 +102,14 @@
 <li><a href="#sec-2">2 Lambda Calculus</a></li>
 <li><a href="#sec-3">3 Functional Programming Languages</a>
 <ul>
-<li><a href="#sec-3-1">3.1 JavaScript</a></li>
-<li><a href="#sec-3-2">3.2 Lisp</a></li>
+<li><a href="#sec-3-1">3.1 Lisp</a>
+<ul>
+<li><a href="#sec-3-1-1">3.1.1 Emacs Lisp</a></li>
+<li><a href="#sec-3-1-2">3.1.2 Scheme</a></li>
+<li><a href="#sec-3-1-3">3.1.3 Clojure</a></li>
+</ul>
+</li>
+<li><a href="#sec-3-2">3.2 JavaScript</a></li>
 <li><a href="#sec-3-3">3.3 Groovy</a></li>
 <li><a href="#sec-3-4">3.4 Haskell</a></li>
 <li><a href="#sec-3-5">3.5 Scala</a></li>
@@ -159,47 +165,38 @@
 <div class="outline-text-2" id="text-3">
 
 <p>Functional programming languages are languages in which you 
-can use functions as first-class objects.  That means that you can assign a 
-function to a variable, pass it as a parameter, and perform certain operations
-on it.  Some languages, like Haskell are strict in enforcing the restrictions
+can use functions as first-class objects.  That means that you can
+assign a 
+function to a variable, pass it as a parameter, and perform certain
+operations
+on it.  Some languages, like Haskell are strict in enforcing the
+restrictions
 of pure functional programming, and some are much less so.
 </p>
+
 </div>
 
 <div id="outline-container-3-1" class="outline-3">
-<h3 id="sec-3-1"><span class="section-number-3">3.1</span> JavaScript</h3>
+<h3 id="sec-3-1"><span class="section-number-3">3.1</span> Lisp</h3>
 <div class="outline-text-3" id="text-3-1">
 
-<p>JavaScript is the first mainstream language with closures.
+<p>Lisp is an ancient and ever new language that pioneered many of the
+things
+we take for granted in modern programming languages.  It grew out of
+the 
+Lambda Calculus, so it has had functional programming features from
+the 
+beginning.
 </p>
 
-
-<pre class="example"><span class="linenr"> 1:  </span>// Define the variables
-<span class="linenr"> 2:  </span>var x = 1, plus1;
-<span class="linenr"> 3:  </span>
-<span class="linenr"> 4:  </span>plus1 = function (a) {
-<span class="linenr"> 5:  </span>    return a + 1;
-<span class="linenr"> 6:  </span>}
-<span class="linenr"> 7:  </span>
-<span class="linenr"> 8:  </span>// plus1 is now a variable containing an anonymous function
-<span class="linenr"> 9:  </span>//     that adds 1 to its single argument
-<span class="linenr">10:  </span>//
-<span class="linenr">11:  </span>
-<span class="linenr">12:  </span>// Invoke plus1 with argment 1
-<span class="linenr">13:  </span>plus1(1);
-</pre>
-
-
 </div>
 
-</div>
+<div id="outline-container-3-1-1" class="outline-4">
+<h4 id="sec-3-1-1"><span class="section-number-4">3.1.1</span> Emacs Lisp</h4>
+<div class="outline-text-4" id="text-3-1-1">
 
-<div id="outline-container-3-2" class="outline-3">
-<h3 id="sec-3-2"><span class="section-number-3">3.2</span> Lisp</h3>
-<div class="outline-text-3" id="text-3-2">
-
-<p>You define an anonymous function with the lambda keyword. 
-(This is using Emacs Lisp).
+<p>In Emacs and Common Lisp, you define an anonymous function with the
+lambda keyword. 
 </p>
 
 
@@ -223,19 +220,24 @@ of pure functional programming, and some are much less so.
 
 
 <p>
-See the emacs lisp documentation on <a href="http://www.gnu.org/software/emacs/manual/html_node/elisp/Lambda-Expressions.html#Lambda-Expressions">lambdas</a> and <a href="http://www.gnu.org/software/emacs/manual/html_node/elisp/Lexical-Binding.html#Lexical-Binding">closures</a>.
+See the emacs lisp documentation on
+<a href="http://www.gnu.org/software/emacs/manual/html_node/elisp/Lambda-Expressions.html#Lambda-Expressions">lambdas</a>
+and
+<a href="http://www.gnu.org/software/emacs/manual/html_node/elisp/Lexical-Binding.html#Lexical-Binding">closures</a>.
 There are Many flavors of Lisp, but I think the most
 important ones are listed below.
-</p><ul>
-<li>Emacs Lisp
-</li>
-<li>Scheme
-</li>
-</ul>
+</p></div>
+
+</div>
+
+<div id="outline-container-3-1-2" class="outline-4">
+<h4 id="sec-3-1-2"><span class="section-number-4">3.1.2</span> Scheme</h4>
+<div class="outline-text-4" id="text-3-1-2">
 
 <p>You don't have to use the funcall function in Scheme; you would 
 just invoke it like any other function. 
-(See <a href="ftp://ftp.cs.utexas.edu/pub/garbage/cs345/schintro-v14/schintro_122.html">An Introduction to Scheme and its Implementation</a>)
+(See
+<a href="ftp://ftp.cs.utexas.edu/pub/garbage/cs345/schintro-v14/schintro_122.html">An Introduction to Scheme and its Implementation</a>)
 </p>
 
 
@@ -264,7 +266,8 @@ just invoke it like any other function.
 </pre>
 
 <p>
-This is evaluated by the Scheme interpreter at <a href="http://repl.it">repl.it</a>
+This is evaluated by the Scheme interpreter at
+<a href="http://repl.it">repl.it</a>
 </p>
 
 
@@ -277,12 +280,18 @@ Invoke plus1 with argument x
 2
 </pre>
 
-<ul>
-<li>Clojure  
-</li>
-</ul>
+</div>
 
+</div>
 
+<div id="outline-container-3-1-3" class="outline-4">
+<h4 id="sec-3-1-3"><span class="section-number-4">3.1.3</span> Clojure</h4>
+<div class="outline-text-4" id="text-3-1-3">
+
+<p>Clojure is a Lisp implementation for the Java Virtual Machine, but it
+has a 
+focus on concurrency.
+</p>
 
 
 <pre class="example">(def x 1)
@@ -294,6 +303,36 @@ Invoke plus1 with argument x
 <p>
 <a href="http://tryclj.com/">http://tryclj.com/</a>
 </p></div>
+</div>
+
+</div>
+
+<div id="outline-container-3-2" class="outline-3">
+<h3 id="sec-3-2"><span class="section-number-3">3.2</span> JavaScript</h3>
+<div class="outline-text-3" id="text-3-2">
+
+<p>JavaScript is the first mainstream language with closures.  It is also
+a 
+language that we can't escape working with.  
+</p>
+
+
+<pre class="example"><span class="linenr"> 1:  </span>// Define the variables
+<span class="linenr"> 2:  </span>var x = 1, plus1;
+<span class="linenr"> 3:  </span>
+<span class="linenr"> 4:  </span>plus1 = function (a) {
+<span class="linenr"> 5:  </span>    return a + 1;
+<span class="linenr"> 6:  </span>}
+<span class="linenr"> 7:  </span>
+<span class="linenr"> 8:  </span>// plus1 is now a variable containing an anonymous function
+<span class="linenr"> 9:  </span>//     that adds 1 to its single argument
+<span class="linenr">10:  </span>//
+<span class="linenr">11:  </span>
+<span class="linenr">12:  </span>// Invoke plus1 with argment 1
+<span class="linenr">13:  </span>plus1(1);
+</pre>
+
+</div>
 
 </div>
 
@@ -317,7 +356,9 @@ Invoke plus1 with argument x
 <h3 id="sec-3-4"><span class="section-number-3">3.4</span> Haskell</h3>
 <div class="outline-text-3" id="text-3-4">
 
-<p>Haskell is a strictly functional programming language.  This introduces disadvantages as well as advantages, but it was originally an academic language
+<p>Haskell is a strictly functional programming language.  This
+introduces disadvantages as well as advantages, but it was originally
+an academic language
 </p></div>
 
 </div>
@@ -326,7 +367,8 @@ Invoke plus1 with argument x
 <h3 id="sec-3-5"><span class="section-number-3">3.5</span> Scala</h3>
 <div class="outline-text-3" id="text-3-5">
 
-<p>Scala is another language designed for the JVM, which introduces some functional concepts.
+<p>Scala is another language designed for the JVM, which introduces some
+functional concepts.
 </p>
 
 
@@ -441,9 +483,12 @@ plus1(1)
 <h3 id="sec-11-1"><span class="section-number-3">11.1</span> IO monad</h3>
 <div class="outline-text-3" id="text-11-1">
 
-<p>Real-world programming requires side-effects, which is a big problem for 
-strictly functional languages, like Haskell, that enforce immutability.  
-They found a loophole by introducing the IO monad, which can be turned into 
+<p>Real-world programming requires side-effects, which is a big problem
+for 
+strictly functional languages, like Haskell, that enforce
+immutability.  
+They found a loophole by introducing the IO monad, which can be turned
+into 
 a list of instructions for creating the output.
 </p></div>
 
@@ -471,18 +516,19 @@ a list of instructions for creating the output.
 <div class="outline-text-2" id="text-12">
 
 <ul>
-<li><a href="http://marakana.com/s/post/1118/jquery_plugins">Develop your own jQuery plugin</a>
-</li>
-<li><a href="http://marakana.com/s/post/1127/jquery_web_page_presentation">Transform your web page into a presentation with jQuery</a>
+<li><a href="http://marakana.com/s/post/1118/jquery_plugins">Develop your own ORG-LIST-END-MARKER jQuery plugin</a>
+<ul>
+<li>
 </li>
 </ul>
 
-</div>
+<p><a href="http://marakana.com/s/post/1127/jquery_web_page_presentation">Transform your web page into a presentation with jQuery</a>
+</p></div>
 </div>
 </div>
 
 <div id="postamble">
-<p class="date">Date: 2013-03-08 16:56:18 Eastern Standard Time</p>
+<p class="date">Date: 2013-03-08 17:04:34 Eastern Standard Time</p>
 <p class="author">Author: </p>
 <p class="creator">Org version 7.8.11 with Emacs version 24</p>
 <a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
