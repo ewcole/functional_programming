@@ -7,8 +7,8 @@
 <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
 <meta name="title" content="Functional Programming and the Lambda Calculus"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2013-03-09 17:08:04 Eastern Standard Time"/>
-<meta name="author" content=""/>
+<meta name="generated" content="2013-03-13 23:40:27 Eastern Daylight Time"/>
+<meta name="author" content="Ed Cole"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
 <style type="text/css">
@@ -98,41 +98,49 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#sec-1">1 Overview</a></li>
-<li><a href="#sec-2">2 Functional Programming Languages</a>
+<li><a href="#sec-1">1 Overview</a>
 <ul>
-<li><a href="#sec-2-1">2.1 Lisp</a>
+<li><a href="#sec-1-1">1.1 The relationship between computer programming and mathematics.</a>
 <ul>
-<li><a href="#sec-2-1-1">2.1.1 Emacs Lisp</a></li>
-<li><a href="#sec-2-1-2">2.1.2 Scheme</a></li>
-<li><a href="#sec-2-1-3">2.1.3 Clojure</a></li>
+<li><a href="#sec-1-1-1">1.1.1 Variables and functions</a></li>
+<li><a href="#sec-1-1-2">1.1.2 What is a function?</a></li>
+</ul></li>
 </ul>
 </li>
-<li><a href="#sec-2-2">2.2 JavaScript</a></li>
-<li><a href="#sec-2-3">2.3 Groovy</a></li>
-<li><a href="#sec-2-4">2.4 Haskell</a></li>
-<li><a href="#sec-2-5">2.5 Scala</a></li>
+<li><a href="#sec-2">2 The Lambda Calculus</a>
+<ul>
+<li><a href="#sec-2-1">2.1 Examples</a>
+<ul>
+<li><a href="#sec-2-1-1">2.1.1 Example 1 &ndash; Identity</a></li>
+<li><a href="#sec-2-1-2">2.1.2 Example 2 &ndash; Self-apply</a></li>
+<li><a href="#sec-2-1-3">2.1.3 Example 3 &ndash; Boolean true and false</a></li>
+<li><a href="#sec-2-1-4">2.1.4 Example 4 &ndash; if-then-else</a></li>
 </ul>
 </li>
-<li><a href="#sec-3">3 The Lambda Calculus</a>
-<ul>
-<li><a href="#sec-3-1">3.1 Examples</a>
-<ul>
-<li><a href="#sec-3-1-1">3.1.1 Example 1 &ndash; Identity</a></li>
-<li><a href="#sec-3-1-2">3.1.2 Example 2 &ndash; Self-apply</a></li>
-<li><a href="#sec-3-1-3">3.1.3 Example 3 &ndash; Boolean true and false</a></li>
-<li><a href="#sec-3-1-4">3.1.4 Example 4 &ndash; if-then-else</a></li>
+<li><a href="#sec-2-2">2.2 Abbreviated Form</a></li>
 </ul>
 </li>
-<li><a href="#sec-3-2">3.2 Abbreviated Form</a></li>
+<li><a href="#sec-3">3 Functional Programming Languages</a>
+<ul>
+<li><a href="#sec-3-1">3.1 Lisp</a>
+<ul>
+<li><a href="#sec-3-1-1">3.1.1 Emacs Lisp</a></li>
+<li><a href="#sec-3-1-2">3.1.2 Scheme</a></li>
+<li><a href="#sec-3-1-3">3.1.3 Clojure</a></li>
+</ul>
+</li>
+<li><a href="#sec-3-2">3.2 JavaScript</a></li>
+<li><a href="#sec-3-3">3.3 Groovy</a></li>
+<li><a href="#sec-3-4">3.4 Haskell</a></li>
+<li><a href="#sec-3-5">3.5 Scala</a></li>
 </ul>
 </li>
 <li><a href="#sec-4">4 Functions as First-Class Objects</a>
 <ul>
 <li><a href="#sec-4-1">4.1 Callbacks</a></li>
-<li><a href="#sec-4-2">4.2 State tables</a></li>
+<li><a href="#sec-4-2">4.2 Asynchronous operations</a></li>
 <li><a href="#sec-4-3">4.3 Hooks</a></li>
-<li><a href="#sec-4-4">4.4 Asynchronous operations</a></li>
+<li><a href="#sec-4-4">4.4 State tables</a></li>
 </ul>
 </li>
 <li><a href="#sec-5">5 Closures</a></li>
@@ -158,13 +166,172 @@
 <div class="outline-text-2" id="text-1">
 
 <p>What is functional programming?  Why does it matter?  
+<a href="http://en.wikipedia.org/wiki/Functional_programming">Wikipedia</a> defines functional programming as "a programming paradigm that 
+treats computation as the evaluation of mathematical functions and avoids 
+state and mutable data."  This paradigm attempts to make the functions of computer science behave like the functions of mathematics.
+</p>
+</div>
+
+<div id="outline-container-1-1" class="outline-3">
+<h3 id="sec-1-1"><span class="section-number-3">1.1</span> The relationship between computer programming and mathematics.</h3>
+<div class="outline-text-3" id="text-1-1">
+
+
+</div>
+
+<div id="outline-container-1-1-1" class="outline-4">
+<h4 id="sec-1-1-1"><span class="section-number-4">1.1.1</span> Variables and functions</h4>
+<div class="outline-text-4" id="text-1-1-1">
+
+<p>Variables and functions behave differently in mathematics and most computer languages.
+x = x + 1
 </p></div>
 
 </div>
 
+<div id="outline-container-1-1-2" class="outline-4">
+<h4 id="sec-1-1-2"><span class="section-number-4">1.1.2</span> What is a function?</h4>
+<div class="outline-text-4" id="text-1-1-2">
+
+
+
+</div>
+</div>
+</div>
+
+</div>
+
 <div id="outline-container-2" class="outline-2">
-<h2 id="sec-2"><span class="section-number-2">2</span> Functional Programming Languages</h2>
+<h2 id="sec-2"><span class="section-number-2">2</span> The Lambda Calculus</h2>
 <div class="outline-text-2" id="text-2">
+
+<p>The Lambda Calculus is a mathematical theory of computation that is equivalent
+to Turing's model for computable functions.  It is based on the manipulation of
+<i>lambda expressions</i>, which are formally defined as a combination of the 
+following things (where A, B, and C are arbitrary &lambda;-expressions):
+</p>
+<p>
+ <i>name</i> or   &lambda; <i>name</i> . A or   (&lambda; x.B C)
+</p>
+<p>
+The <i>name</i> represents a unary function (i.e. a function with one argument) that 
+has no side effects.
+</p>
+<p>
+The second form is called abstraction; &lambda; x.A binds all occurences of x 
+in the (arbitrary) lambda expression A; It is equivalent to using x as the 
+parameter of a function in a modern computer language.
+</p>
+<p>
+The third form is application of &lambda;-expression 1 to &lambda;-expression 2;
+(&lambda; x.B C) has the effect of replacing all occurences of x in B with C.
+</p>
+
+</div>
+
+<div id="outline-container-2-1" class="outline-3">
+<h3 id="sec-2-1"><span class="section-number-3">2.1</span> Examples</h3>
+<div class="outline-text-3" id="text-2-1">
+
+
+</div>
+
+<div id="outline-container-2-1-1" class="outline-4">
+<h4 id="sec-2-1-1"><span class="section-number-4">2.1.1</span> Example 1 &ndash; Identity</h4>
+<div class="outline-text-4" id="text-2-1-1">
+
+<p>&lambda; x.x &ndash; This is the identity operation; in Groovy, it would be `{ x -&gt; x }`.
+</p></div>
+
+</div>
+
+<div id="outline-container-2-1-2" class="outline-4">
+<h4 id="sec-2-1-2"><span class="section-number-4">2.1.2</span> Example 2 &ndash; Self-apply</h4>
+<div class="outline-text-4" id="text-2-1-2">
+
+<p>&lambda; s.(s s) &ndash; Applies `s` to itself.  In Groovy `{ s -&gt; s(s) }`
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-2-1-3" class="outline-4">
+<h4 id="sec-2-1-3"><span class="section-number-4">2.1.3</span> Example 3 &ndash; Boolean true and false</h4>
+<div class="outline-text-4" id="text-2-1-3">
+
+<p>&lambda; first.&lambda; second.first &ndash;  This takes two arguments and returns the first.  ` {first, second -&gt; first}`.  It is significant because Church used it as `true` in deriving boolean logic from the &lambda;-calculus.
+</p>
+<p>
+&lambda; first.&lambda; second.second &ndash; Return the second argument.  This is `false` in boolean logic.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-2-1-4" class="outline-4">
+<h4 id="sec-2-1-4"><span class="section-number-4">2.1.4</span> Example 4 &ndash; if-then-else</h4>
+<div class="outline-text-4" id="text-2-1-4">
+
+<p>&lambda; iftrue.&lambda; iffalse.&lambda; test.((test iftrue) iffalse)  &ndash; If you apply this to a &lambda;-expression 
+that evaluates to `true` or `false`, it becomes the standard if-then-else construct you find in 
+almost every programming language.  In this case, the test is the third argument so you can curry it with iftrue and
+iffalse expressions.  Thus 
+</p>
+<p>
+ ((&lambda; iftrue.&lambda; iffalse.&lambda; test.((test iftrue) iffalse) x) y) =&gt;
+(&lambda; iffalse.&lambda; test.((test x) iffalse) y) =&gt; 
+&lambda; test.((test x) y)
+</p>
+<p>
+The result is a function that you apply to a boolean condition.  
+</p>
+<p>
+ &lambda; test.((test x) y) true =&gt; x
+</p>
+<p>
+ &lambda; test.((test x) y) false =&gt; y
+</p>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-2-2" class="outline-3">
+<h3 id="sec-2-2"><span class="section-number-3">2.2</span> Abbreviated Form</h3>
+<div class="outline-text-3" id="text-2-2">
+
+
+<p>
+Because the lambda notation of all but the simplest expressions becomes 
+difficult to read because of all the parentheses, is often abbreviated 
+by combining the application of multiple arguments of an expression into a
+single set of parentheses.  Thus
+</p>
+<p>
+ &lambda; a.&lambda; b.&lambda; c.(((f a) b) c)
+</p>
+<p>
+becomes
+</p>
+<p>
+ &lambda; a.&lambda; b.&lambda; c.(f a b c)
+</p>
+<p>
+So the if-then-else example above would look like this.
+</p>
+<p>
+ &lambda; test.&lambda; iftrue.&lambda;.iffalse.(test iftrue iffalse)
+</p>
+<p>
+At this point it seems to start looking like LISP code.  This is not a coincidence.
+</p></div>
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Functional Programming Languages</h2>
+<div class="outline-text-2" id="text-3">
 
 <p>Functional programming languages are languages in which you 
 can use functions as first-class objects.  That means that you can assign a 
@@ -175,9 +342,9 @@ of pure functional programming, and some are much less so.
 
 </div>
 
-<div id="outline-container-2-1" class="outline-3">
-<h3 id="sec-2-1"><span class="section-number-3">2.1</span> Lisp</h3>
-<div class="outline-text-3" id="text-2-1">
+<div id="outline-container-3-1" class="outline-3">
+<h3 id="sec-3-1"><span class="section-number-3">3.1</span> Lisp</h3>
+<div class="outline-text-3" id="text-3-1">
 
 <p>Lisp is an ancient and ever new language that pioneered many of the things
 we take for granted in modern programming languages.  It grew out of the 
@@ -187,9 +354,9 @@ beginning.
 
 </div>
 
-<div id="outline-container-2-1-1" class="outline-4">
-<h4 id="sec-2-1-1"><span class="section-number-4">2.1.1</span> Emacs Lisp</h4>
-<div class="outline-text-4" id="text-2-1-1">
+<div id="outline-container-3-1-1" class="outline-4">
+<h4 id="sec-3-1-1"><span class="section-number-4">3.1.1</span> Emacs Lisp</h4>
+<div class="outline-text-4" id="text-3-1-1">
 
 <p>In Emacs and Common Lisp, you define an anonymous function with the lambda keyword. 
 </p>
@@ -222,9 +389,9 @@ important ones are listed below.
 
 </div>
 
-<div id="outline-container-2-1-2" class="outline-4">
-<h4 id="sec-2-1-2"><span class="section-number-4">2.1.2</span> Scheme</h4>
-<div class="outline-text-4" id="text-2-1-2">
+<div id="outline-container-3-1-2" class="outline-4">
+<h4 id="sec-3-1-2"><span class="section-number-4">3.1.2</span> Scheme</h4>
+<div class="outline-text-4" id="text-3-1-2">
 
 <p>You don't have to use the funcall function in Scheme; you would 
 just invoke it like any other function. 
@@ -274,9 +441,9 @@ Invoke plus1 with argument x
 
 </div>
 
-<div id="outline-container-2-1-3" class="outline-4">
-<h4 id="sec-2-1-3"><span class="section-number-4">2.1.3</span> Clojure</h4>
-<div class="outline-text-4" id="text-2-1-3">
+<div id="outline-container-3-1-3" class="outline-4">
+<h4 id="sec-3-1-3"><span class="section-number-4">3.1.3</span> Clojure</h4>
+<div class="outline-text-4" id="text-3-1-3">
 
 <p>Clojure is a Lisp implementation for the Java Virtual Machine, but it has a 
 focus on concurrency.
@@ -296,9 +463,9 @@ focus on concurrency.
 
 </div>
 
-<div id="outline-container-2-2" class="outline-3">
-<h3 id="sec-2-2"><span class="section-number-3">2.2</span> JavaScript</h3>
-<div class="outline-text-3" id="text-2-2">
+<div id="outline-container-3-2" class="outline-3">
+<h3 id="sec-3-2"><span class="section-number-3">3.2</span> JavaScript</h3>
+<div class="outline-text-3" id="text-3-2">
 
 <p>JavaScript is the first mainstream language with closures.  It is also a 
 language that we can't escape working with.  
@@ -324,9 +491,9 @@ language that we can't escape working with.
 
 </div>
 
-<div id="outline-container-2-3" class="outline-3">
-<h3 id="sec-2-3"><span class="section-number-3">2.3</span> Groovy</h3>
-<div class="outline-text-3" id="text-2-3">
+<div id="outline-container-3-3" class="outline-3">
+<h3 id="sec-3-3"><span class="section-number-3">3.3</span> Groovy</h3>
+<div class="outline-text-3" id="text-3-3">
 
 
 
@@ -340,18 +507,18 @@ language that we can't escape working with.
 
 </div>
 
-<div id="outline-container-2-4" class="outline-3">
-<h3 id="sec-2-4"><span class="section-number-3">2.4</span> Haskell</h3>
-<div class="outline-text-3" id="text-2-4">
+<div id="outline-container-3-4" class="outline-3">
+<h3 id="sec-3-4"><span class="section-number-3">3.4</span> Haskell</h3>
+<div class="outline-text-3" id="text-3-4">
 
 <p>Haskell is a strictly functional programming language.  This introduces disadvantages as well as advantages, but it was originally an academic language
 </p></div>
 
 </div>
 
-<div id="outline-container-2-5" class="outline-3">
-<h3 id="sec-2-5"><span class="section-number-3">2.5</span> Scala</h3>
-<div class="outline-text-3" id="text-2-5">
+<div id="outline-container-3-5" class="outline-3">
+<h3 id="sec-3-5"><span class="section-number-3">3.5</span> Scala</h3>
+<div class="outline-text-3" id="text-3-5">
 
 <p>Scala is another language designed for the JVM, which introduces some functional concepts.
 </p>
@@ -362,134 +529,6 @@ plus1(1)
 </pre>
 
 </div>
-</div>
-
-</div>
-
-<div id="outline-container-3" class="outline-2">
-<h2 id="sec-3"><span class="section-number-2">3</span> The Lambda Calculus</h2>
-<div class="outline-text-2" id="text-3">
-
-<p>The Lambda Calculus is a mathematical theory of computation that is equivalent
-to Turing's model for computable functions.  It is based on the manipulation of
-<span style="text-decoration:underline;">lambda expressions</span>, which are formally defined as a combination of the 
-following things (where A, B, and C are arbitrary &lambda;-expressions):
-</p>
-<p>
- <span style="text-decoration:underline;">name</span> or   &lambda; <span style="text-decoration:underline;">name</span> . A or   (&lambda; x.B C)
-</p>
-<p>
-The <span style="text-decoration:underline;">name</span> represents a unary function (i.e. a function with one argument) that 
-has no side effects.
-</p>
-<p>
-The second form is called abstraction; &lambda; x.A binds all occurences of x 
-in the (arbitrary) lambda expression A; It is equivalent to using x as the 
-parameter of a function in a modern computer language.
-</p>
-<p>
-The third form is application of &lambda;-expression 1 to &lambda;-expression 2;
-(&lambda; x.B C) has the effect of replacing all occurences of x in B with C.
-</p>
-
-</div>
-
-<div id="outline-container-3-1" class="outline-3">
-<h3 id="sec-3-1"><span class="section-number-3">3.1</span> Examples</h3>
-<div class="outline-text-3" id="text-3-1">
-
-
-</div>
-
-<div id="outline-container-3-1-1" class="outline-4">
-<h4 id="sec-3-1-1"><span class="section-number-4">3.1.1</span> Example 1 &ndash; Identity</h4>
-<div class="outline-text-4" id="text-3-1-1">
-
-<p>&lambda; x.x &ndash; This is the identity operation; in Groovy, it would be `{ x -&gt; x }`.
-</p></div>
-
-</div>
-
-<div id="outline-container-3-1-2" class="outline-4">
-<h4 id="sec-3-1-2"><span class="section-number-4">3.1.2</span> Example 2 &ndash; Self-apply</h4>
-<div class="outline-text-4" id="text-3-1-2">
-
-<p>&lambda; s.(s s) &ndash; Applies `s` to itself.  In Groovy `{ s -&gt; s(s) }`
-</p>
-</div>
-
-</div>
-
-<div id="outline-container-3-1-3" class="outline-4">
-<h4 id="sec-3-1-3"><span class="section-number-4">3.1.3</span> Example 3 &ndash; Boolean true and false</h4>
-<div class="outline-text-4" id="text-3-1-3">
-
-<p>&lambda; first.&lambda; second.first &ndash;  This takes two arguments and returns the first.  ` {first, second -&gt; first}`.  It is significant because Church used it as `true` in deriving boolean logic from the &lambda;-calculus.
-</p>
-<p>
-&lambda; first.&lambda; second.second &ndash; Return the second argument.  This is `false` in boolean logic.
-</p>
-</div>
-
-</div>
-
-<div id="outline-container-3-1-4" class="outline-4">
-<h4 id="sec-3-1-4"><span class="section-number-4">3.1.4</span> Example 4 &ndash; if-then-else</h4>
-<div class="outline-text-4" id="text-3-1-4">
-
-<p>&lambda; iftrue.&lambda; iffalse.&lambda; test.((test iftrue) iffalse)  &ndash; If you apply this to a &lambda;-expression 
-that evaluates to `true` or `false`, it becomes the standard if-then-else construct you find in 
-almost every programming language.  In this case, the test is the third argument so you can curry it with iftrue and
-iffalse expressions.  Thus 
-</p>
-<p>
- ((&lambda; iftrue.&lambda; iffalse.&lambda; test.((test iftrue) iffalse) x) y) =&gt;
-(&lambda; iffalse.&lambda; test.((test x) iffalse) y) =&gt; 
-&lambda; test.((test x) y)
-</p>
-<p>
-The result is a function that you apply to a boolean condition.  
-</p>
-<p>
- &lambda; test.((test x) y) true =&gt; x
-</p>
-<p>
- &lambda; test.((test x) y) false =&gt; y
-</p>
-</div>
-</div>
-
-</div>
-
-<div id="outline-container-3-2" class="outline-3">
-<h3 id="sec-3-2"><span class="section-number-3">3.2</span> Abbreviated Form</h3>
-<div class="outline-text-3" id="text-3-2">
-
-
-<p>
-Because the lambda notation of all but the simplest expressions becomes 
-difficult to read because of all the parentheses, is often abbreviated 
-by combining the application of multiple arguments of an expression into a
-single set of parentheses.  Thus
-</p>
-<p>
- &lambda; a.&lambda; b.&lambda; c.(((f a) b) c)
-</p>
-<p>
-becomes
-</p>
-<p>
- &lambda; a.&lambda; b.&lambda; c.(f a b c)
-</p>
-<p>
-So the if-then-else example above would look like this.
-</p>
-<p>
- &lambda; test.&lambda; iftrue.&lambda;.iffalse.(test iftrue iffalse)
-</p>
-<p>
-At this point it seems to start looking like LISP code.  This is not a coincidence.
-</p></div>
 </div>
 
 </div>
@@ -511,7 +550,7 @@ At this point it seems to start looking like LISP code.  This is not a coinciden
 </div>
 
 <div id="outline-container-4-2" class="outline-3">
-<h3 id="sec-4-2"><span class="section-number-3">4.2</span> State tables</h3>
+<h3 id="sec-4-2"><span class="section-number-3">4.2</span> Asynchronous operations</h3>
 <div class="outline-text-3" id="text-4-2">
 
 </div>
@@ -527,7 +566,7 @@ At this point it seems to start looking like LISP code.  This is not a coinciden
 </div>
 
 <div id="outline-container-4-4" class="outline-3">
-<h3 id="sec-4-4"><span class="section-number-3">4.4</span> Asynchronous operations</h3>
+<h3 id="sec-4-4"><span class="section-number-3">4.4</span> State tables</h3>
 <div class="outline-text-3" id="text-4-4">
 
 </div>
@@ -637,8 +676,8 @@ a list of instructions for creating the output.
 </div>
 
 <div id="postamble">
-<p class="date">Date: 2013-03-09 17:08:04 Eastern Standard Time</p>
-<p class="author">Author: </p>
+<p class="date">Date: 2013-03-13 23:40:27 Eastern Daylight Time</p>
+<p class="author">Author: Ed Cole</p>
 <p class="creator">Org version 7.8.11 with Emacs version 24</p>
 <a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
 

@@ -3,15 +3,25 @@
 
 * Overview
 What is functional programming?  Why does it matter?  
+[[http://en.wikipedia.org/wiki/Functional_programming][Wikipedia]] defines functional programming as "a programming paradigm that 
+treats computation as the evaluation of mathematical functions and avoids 
+state and mutable data."  This paradigm attempts to make the functions of computer science behave like the functions of mathematics.
+** The relationship between computer programming and mathematics.
+*** Variables and functions
+Variables and functions behave differently in mathematics and most computer languages.
+x = x + 1
+*** What is a function?
+
+
 * The Lambda Calculus
 The Lambda Calculus is a mathematical theory of computation that is equivalent
 to Turing's model for computable functions.  It is based on the manipulation of
-_lambda expressions_, which are formally defined as a combination of the 
+/lambda expressions/, which are formally defined as a combination of the 
 following things (where A, B, and C are arbitrary \lambda-expressions):
 
- _name_ or   \lambda _name_ . A or   (\lambda x.B C)
+ /name/ or   \lambda /name/ . A or   (\lambda x.B C)
 
-The _name_ represents a unary function (i.e. a function with one argument) that 
+The /name/ represents a unary function (i.e. a function with one argument) that 
 has no side effects.
 
 The second form is called abstraction; \lambda x.A binds all occurences of x 
@@ -189,9 +199,9 @@ plus1(1)
 * Functions as First-Class Objects
   Callbacks, Hooks, and Ajax
 ** Callbacks
-** State tables
-** Hooks
 ** Asynchronous operations
+** Hooks
+** State tables
 * Closures
 * Combinators
 * Recursion
