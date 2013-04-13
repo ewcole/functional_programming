@@ -12,7 +12,12 @@ Variables and functions behave differently in mathematics and most computer lang
 x = x + 1
 *** What is a function?
 
-
+** Functions
+*** First-class objects
+Functions can be assigned to variables, passed as parameters to functions, returned from functions, and created on the fly.
+*** No side effects
+The only way a function is allowed to change its environment is through its return value. 
+*** Immutability
 * The Lambda Calculus
 The Lambda Calculus is a mathematical theory of computation that is equivalent
 to Turing's model for computable functions.  It is based on the manipulation of
