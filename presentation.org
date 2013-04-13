@@ -8,10 +8,10 @@ treats computation as the evaluation of mathematical functions and avoids
 state and mutable data."  This paradigm attempts to make the functions of computer science behave like the functions of mathematics.
 ** The relationship between computer programming and mathematics.
 *** Variables and functions
-Variables and functions behave differently in mathematics and most computer languages.
-x = x + 1
+Variables and functions behave differently in mathematics and most computer languages.  Consider the expression x = x + 1.  It is a contradiction in mathematics, but in many languages, it means to take the value that was in a location named "x" and replace it with the same value plus one.
 *** What is a function?
-
+- In mathematics, a function is a mapping from one set (the domain) to another set (the range) in such a way that any element of the domain is mapped to exactly one element of the range.
+- In computers, a function is a subroutine that returns a value.
 ** Functions
 *** First-class objects
 Functions can be assigned to variables, passed as parameters to functions, returned from functions, and created on the fly.
@@ -81,6 +81,11 @@ So the if-then-else example above would look like this.
  \lambda test.\lambda iftrue.\lambda.iffalse.(test iftrue iffalse)
 
 At this point it seems to start looking like LISP code.  This is not a coincidence.
+** Optimization
+- AMD64, Itanium and parallelism
+- On-the-fly optimization
+  - JVM
+  - V8
 * Functional Programming Languages
 Functional programming languages are languages in which you 
 can use functions as first-class objects.  That means that you can assign a 
