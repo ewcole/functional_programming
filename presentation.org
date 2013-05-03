@@ -1,6 +1,9 @@
 #+TITLE: Functional Programming and the Lambda Calculus
 #+AUTHOR: Ed Cole
 
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/presentation.css" />
+#+STYLE: <link rel="stylesheet" type="text/css" href="css/presentation.css" />
+# HTML_HEAD_EXTRA: <link rel="alternate stylesheet" type="text/css" href="style2.css" />
 * Overview
 What is functional programming?  Why does it matter?  
 [[http://en.wikipedia.org/wiki/Functional_programming][Wikipedia]] defines functional programming as "a programming paradigm that 
@@ -16,8 +19,9 @@ Variables and functions behave differently in mathematics and most computer lang
 *** First-class objects
 Functions can be assigned to variables, passed as parameters to functions, returned from functions, and created on the fly.
 *** No side effects
-The only way a function is allowed to change its environment is through its return value. 
+If the only way a function changes its environment is through its return value, it is said to have no side effects.  This is essential to the Lambda Calculus.
 *** Immutability
+Once a variable is set, it can never be changed.
 * The Lambda Calculus
 The Lambda Calculus is a mathematical theory of computation that is equivalent
 to Turing's model for computable functions.  It is based on the manipulation of

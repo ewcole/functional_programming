@@ -22,8 +22,9 @@
 *** jQuery
 - [[http://www.i-programmer.info/programming/jquery/4837-jquery-promises-deferred-a-webworkers.html]]
 ** Promises
--  [[http://net.tutsplus.com/tutorials/javascript-ajax/wrangle-async-tasks-with-jquery-promises/][Wrangle Async Tasks With JQuery Promises]]
+- [[http://net.tutsplus.com/tutorials/javascript-ajax/wrangle-async-tasks-with-jquery-promises/][Wrangle Async Tasks With JQuery Promises]]
 - [[https://gist.github.com/briancavalier/3296186][A proof that Promises/A is a Monad]] (This looks very interesting.)
+- [[http://youtu.be/hf1T_AONQJU][Redemption from Callback Hell]]
 \lambda
 \Lambda 
            
