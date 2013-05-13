@@ -1,5 +1,5 @@
 body {
-    background-color: black;
+    background-color: #000044;
     color: white;
 }
 
@@ -12,6 +12,19 @@ a {
     color: cyan;
 }
 
+pre {
+    color: black;
+    background-color: white;
+}
+
+.outline-3 {
+    background-color: white;
+    color: black;
+}
+
+.outline-text-2 {
+    background-color: white;
+}
 a:visited {
     color: #ffbbff;
 }

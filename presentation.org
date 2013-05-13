@@ -42,17 +42,27 @@ The third form is application of \lambda-expression 1 to \lambda-expression 2;
 
 ** Examples
 *** Example 1 -- Identity
-\lambda x.x -- This is the identity operation; in Groovy, it would be `{ x -> x }`.
+\lambda x.x 
+
+This is the identity operation; in Groovy, it would be `{ x -> x }`.
 *** Example 2 -- Self-apply
-\lambda s.(s s) -- Applies `s` to itself.  In Groovy `{ s -> s(s) }`
+\lambda s.(s s)
+
+Applies `s` to itself.  In Groovy `{ s -> s(s) }`
 
 *** Example 3 -- Boolean true and false
-\lambda first.\lambda second.first --  This takes two arguments and returns the first.  ` {first, second -> first}`.  It is significant because Church used it as `true` in deriving boolean logic from the \lambda-calculus.
+\lambda first.\lambda second.first
 
-\lambda first.\lambda second.second -- Return the second argument.  This is `false` in boolean logic.
+This takes two arguments and returns the first.  ` {first, second -> first}`.  It is significant because Church used it as `true` in deriving boolean logic from the \lambda-calculus.
+
+\lambda first.\lambda second.second
+
+Return the second argument.  This is `false` in boolean logic.
 
 *** Example 4 -- if-then-else
-\lambda iftrue.\lambda iffalse.\lambda test.((test iftrue) iffalse)  -- If you apply this to a \lambda-expression 
+\lambda iftrue.\lambda iffalse.\lambda test.((test iftrue) iffalse)  
+
+If you apply this to a \lambda-expression 
 that evaluates to `true` or `false`, it becomes the standard if-then-else construct you find in 
 almost every programming language.  In this case, the test is the third argument so you can curry it with iftrue and
 iffalse expressions.  Thus 
@@ -68,7 +78,6 @@ The result is a function that you apply to a boolean condition.
  \lambda test.((test x) y) false => y
 
 ** Abbreviated Form
-
 Because the lambda notation of all but the simplest expressions becomes 
 difficult to read because of all the parentheses, is often abbreviated 
 by combining the application of multiple arguments of an expression into a
@@ -86,10 +95,8 @@ So the if-then-else example above would look like this.
 
 At this point it seems to start looking like LISP code.  This is not a coincidence.
 ** Optimization
+Modern computer systems, like the leading Java Virtual Machines or the V8 Javascript engine (used in Chrome and Node.js) rewrite your program as it runs to make it more efficient or to run parts of the code in parallel.  The lambda calculus is helpful in analyzing the code.
 - AMD64, Itanium and parallelism
-- On-the-fly optimization
-  - JVM
-  - V8
 * Functional Programming Languages
 Functional programming languages are languages in which you 
 can use functions as first-class objects.  That means that you can assign a 
@@ -214,10 +221,13 @@ plus1(1)
   Callbacks, Hooks, and Ajax
 ** Callbacks
 ** Asynchronous operations
+
 ** Hooks
 ** State tables
 * Closures
+A symbol in a lambda expression is called /free/ if it is not bound by 
 * Combinators
+Combinators are closed lambda expressions
 * Recursion
 * Lists
 * Javascript
@@ -232,6 +242,7 @@ They found a loophole by introducing the IO monad, which can be turned into
 a list of instructions for creating the output.
 ** Maybe monad
 ** Promises
+Promises are a very powerful tool for dealing with asynchronous operations.  A  promise 
 * Notes
 - [[http://marakana.com/s/post/1118/jquery_plugins][Develop your own jQuery plugin]]
 - [[http://marakana.com/s/post/1127/jquery_web_page_presentation][Transform your web page into a presentation with jQuery]]
