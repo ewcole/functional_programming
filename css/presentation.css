@@ -3,9 +3,17 @@ body {
     color: white;
 }
 
-body * {
+p {
     color: black;
     background-color: white;
+}
+
+a {
+    color: cyan;
+}
+
+a:visited {
+    color: #ffbbff;
 }
 /* Pre-defined classes 
      p.author            author information, including email
@@ -36,6 +44,14 @@ body * {
      .footnum            footnote number in footnote definition (always <sup>)
 */
 
-#table-of-contents {
-
+/*#table-of-contents {
+    
 }
+#text-table-of-contents > ul > li > a  {
+    background-color: black;
+    color: white;
+}
+
+#text-table-of-contents > ul > li * ul  {
+    display: none;
+}*/
