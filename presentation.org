@@ -77,6 +77,8 @@ The result is a function that you apply to a boolean condition.
 
  \lambda test.((test x) y) false => y
 
+** Free and bound variables
+
 ** Abbreviated Form
 Because the lambda notation of all but the simplest expressions becomes 
 difficult to read because of all the parentheses, is often abbreviated 
