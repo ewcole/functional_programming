@@ -1,3 +1,20 @@
 #+title: Automata
+#+AUTHOR: Ed Cole
+#+DESCRIPTION: Notes on automata theory, from theoretical computer science.
+#+KEYWORDS:
+#+LANGUAGE:  en
+#+OPTIONS:   H:3 num:nil toc:3 \n:nil @:t ::t |:t ^:nil -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:nil pri:nil tags:not-in-toc
+#+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+#+LINK_UP:   
+#+LINK_HOME: 
+#+XSLT:
 These are my notes from this year's study of automata, which is an important branch of theoretical computer science.  It is surprisingly mathematical in its form and content.
 * Alphabets
+The words used in automata theory 
+
+An alphabet is any set \Sigma
+
+* Deterministic Finite Automata
