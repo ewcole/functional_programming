@@ -1,0 +1,3 @@
+#+title: Automata
+These are my notes from this year's study of automata, which is an important branch of theoretical computer science.  It is surprisingly mathematical in its form and content.
+* Alphabets
