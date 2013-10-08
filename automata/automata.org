@@ -13,8 +13,9 @@
 #+XSLT:
 These are my notes from this year's study of automata, which is an important branch of theoretical computer science.  It is surprisingly mathematical in its form and content.
 * Alphabets
-The words used in automata theory 
 
-An alphabet is any set \Sigma
+An alphabet \Sigma is a non-empty, finite set.
+
+Automata theory uses linguistic terminology for its basic ideas, but an alphapet doesn't have to consist of letters.  For instance, if you consider a vending machine as an automaton, the letters are actually the different coins that the machine recognizes.
 
 * Deterministic Finite Automata
