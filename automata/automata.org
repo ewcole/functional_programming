@@ -3,7 +3,8 @@
 #+DESCRIPTION: Notes on automata theory, from theoretical computer science.
 #+KEYWORDS:
 #+LANGUAGE:  en
-#+OPTIONS:   H:3 num:nil toc:3 \n:nil @:t ::t |:t ^:nil -:t f:t *:t <:t
+#+OPTIONS:   H:3 num:nil toc:3 \n:nil @:t ::t |:t ^:nil -:t f:t *:t <:t 
+#+OPTIONS: ^:{}
 #+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:nil pri:nil tags:not-in-toc
 #+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
 #+EXPORT_SELECT_TAGS: export
@@ -11,11 +12,19 @@
 #+LINK_UP:   
 #+LINK_HOME: 
 #+XSLT:
-These are my notes from this year's study of automata, which is an important branch of theoretical computer science.  It is surprisingly mathematical in its form and content.
+These are my notes from this year's study of automata, which is an important branch of theoretical computer science.  It is surprisingly mathematical in its form and content. 
+
 * Alphabets
 
-An alphabet \Sigma is a non-empty, finite set.
+An alphabet \Sigma is a non-empty, finite set.[fn:Carroll_Long]
 
-Automata theory uses linguistic terminology for its basic ideas, but an alphapet doesn't have to consist of letters.  For instance, if you consider a vending machine as an automaton, the letters are actually the different coins that the machine recognizes.
+For a given alphabet \Sigma and a natural number /n/, a sequence of symbols a_{1}a_{2}...a_{n} is a /word/ if and only if a_{i} \in \Sigma \forall i \in 1 .. /n/. [fn:Carroll_Long]
+
+Automata theory uses linguistic terminology for its basic ideas, but an alphabet doesn't have to consist of letters.  For instance, if you consider a vending machine as an automaton, the letters are actually the different coins that the machine recognizes.
 
 * Deterministic Finite Automata
+
+* Footnotes
+
+[fn:Carroll_Long]/Theory of Finite Automata with and  Introduction to Formal Languages/, John Carroll and Darrell Long, Prentice Hall, Englewood Cliffs New Jersey, 1989
+
